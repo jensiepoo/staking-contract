@@ -1,6 +1,6 @@
-# Hardhat Hackathon Boilerplate
+# Staking Contract
 
-This repository contains a sample project that you can use as the starting point
+This repository contains a sample project Provided by @CryptoConner that you can use as the starting point
 for your Ethereum project. It's also a great fit for learning the basics of
 smart contract development.
 
@@ -9,14 +9,17 @@ This project is intended to be used with the
 able to follow it by yourself by reading the README and exploring its
 `contracts`, `tests`, `scripts` and `frontend` directories.
 
-## Quick start
+## Quick start using Remix
+You may simply copy the two contracts under ~/contracts, i.e. DogeClone.sol and StakingContract.sol, over to a Remix IDE and proceed from there.
+
+## Quick start using Hardhat
 
 The first things you need to do are cloning this repository and installing its
 dependencies:
 
 ```sh
-git clone https://github.com/nomiclabs/hardhat-hackathon-boilerplate.git
-cd hardhat-hackathon-boilerplate
+git clone https://github.com/jensiepoo/staking-contract.git
+cd staking-contract
 npm install
 ```
 
@@ -41,13 +44,11 @@ npm install
 npm start
 ```
 
-> Note: There's [an issue in `ganache-core`](https://github.com/trufflesuite/ganache-core/issues/650) that can make the `npm install` step fail. 
->
-> If you see `npm ERR! code ENOLOCAL`, try running `npm ci` instead of `npm install`.
-
-Open [http://localhost:3000/](http://localhost:3000/) to see your Dapp. You will
-need to have [Metamask](https://metamask.io) installed and listening to
-`localhost 8545`.
+## After deploying DogeClone 
+Update the `hardhat.config.js`'s solidity version to match what we have in `StakingContract.sol`, and run the deploy script again,
+```sh
+npx hardhat run scripts/deploy.js --network localhost
+```
 
 ## User Guide
 
@@ -78,12 +79,5 @@ Your environment will have everything you need to build a Dapp powered by Hardha
   console, try resetting your Metamask account. This will reset the account's
   transaction history and also the nonce. Open Metamask, click on your account
   followed by `Settings > Advanced > Reset Account`.
-
-## Feedback, help and news
-
-We'd love to have your feedback on this tutorial. Feel free to reach us through
-this repository or [our Discord server](https://invite.gg/HardhatSupport).
-
-Also you can [follow us on Twitter](https://twitter.com/HardhatHQ).
 
 **Happy _building_!**
